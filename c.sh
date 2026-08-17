@@ -1,14 +1,14 @@
 #!/bin/bash
 
-echo "Select an operation:"
-echo "1. Addition"
-echo "2. Subtraction"
-echo "3. Multiplication"
-echo "4. Division"
-read -p "Enter your choice (1-4): " choice
+if [ "$#" -ne 3 ]; then
+  echo "Usage: $0 <first_number> <second_number> <choice>"
+  echo "Choices: 1=Addition, 2=Subtraction, 3=Multiplication, 4=Division"
+  exit 1
+fi
 
-read -p "Enter first number: " num1
-read -p "Enter second number: " num2
+num1=$1
+num2=$2
+choice=$3
 
 case "$choice" in
   1)
